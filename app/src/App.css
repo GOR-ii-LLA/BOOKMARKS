@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500&family=Inter:wght@400;500&display=swap');
+
+/* ── Variables ── */
+:root {
+  --accent: #1D9E75;
+  --accent-dark: #0F6E56;
+  --accent-light: #E1F5EE;
+  --accent-text: #0F6E56;
+
+  --claude: #D97757;
+  --claude-light: #FAECE7;
+  --claude-text: #993C1D;
+
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.14);
+  --text: #1a1a18;
+  --text-muted: #6b6a65;
+  --text-faint: #a09f9a;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font-display: 'Unbounded', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+.dark {
+  --bg: #141412;
+  --surface: #1e1d1b;
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.14);
+  --text: #f0ede8;
+  --text-muted: #9b9890;
+  --text-faint: #6b6a65;
+  --accent-light: #0a3328;
+  --accent-text: #5DCAA5;
+  --claude-light: #2d1a12;
+  --claude-text: #F0997B;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); font-family: var(--font-body); color: var(--text); transition: background 0.2s, color 0.2s; }
+button { cursor: pointer; font-family: var(--font-body); }
+a { text-decoration: none; }
+
+/* ── Layout ── */
+.app { min-height: 100vh; padding: 0 0 4rem; }
+.container { max-width: 740px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ── Header ── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0 1.25rem;
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+.logo-o { color: var(--accent); }
+
+.theme-btn {
+  font-size: 12px;
+  padding: 5px 12px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-muted);
+  transition: color 0.15s, border-color 0.15s;
+}
+.theme-btn:hover { color: var(--text); border-color: var(--border-strong); }
+
+/* ── Search ── */
+.search {
+  width: 100%;
+  padding: 9px 14px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  margin-bottom: 14px;
+  transition: border-color 0.15s;
+}
+.search::placeholder { color: var(--text-faint); }
+.search:focus { border-color: var(--accent); }
+
+/* ── Category tabs ── */
+.cat-tabs {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 0.5px solid var(--border);
+  gap: 0;
+  scrollbar-width: none;
+}
+.cat-tabs::-webkit-scrollbar { display: none; }
+
+.cat-tab {
+  font-size: 13px;
+  font-family: var(--font-body);
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -0.5px;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+.cat-tab:hover:not(.active) { color: var(--text); }
+.cat-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 500;
+}
+
+/* Claude special tab */
+.cat-tab--special { color: var(--claude); }
+.cat-tab--special:hover:not(.active) { color: var(--claude); opacity: 0.8; }
+.cat-tab--special.active {
+  color: var(--claude);
+  border-bottom-color: var(--claude);
+  font-weight: 500;
+}
+
+/* ── Tag bar ── */
+.tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 0 14px;
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.tag-pill {
+  font-size: 12px;
+  font-family: var(--font-body);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 0.5px solid var(--border-strong);
+  background: none;
+  color: var(--text-muted);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.tag-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.tag-pill.active {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* ── Tag page title ── */
+.tag-page-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+/* ── Entry list ── */
+.entry-list {
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.entry-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.entry-row:last-child { border-bottom: none; }
+.entry-row:hover,
+.entry-row.open { background: var(--bg); }
+
+.entry-icon {
+  font-size: 16px;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.entry-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.entry-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+.entry-tags {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+.entry-link {
+  font-size: 12px;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.entry-link:hover { opacity: 0.75; }
+
+/* ── Expand panel ── */
+.entry-expand {
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--border);
+  padding: 14px 16px 14px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.entry-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.entry-extra {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.entry-note {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+.entry-expand-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+.entry-expand-tags .tag-pill {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--accent-light);
+  border-color: transparent;
+  color: var(--accent-text);
+}
+.entry-expand-tags .tag-pill:hover {
+  border-color: var(--accent);
+}
+
+/* ── Empty ── */
+.empty {
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 14px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
