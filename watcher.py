@@ -28,6 +28,7 @@ CATEGORY_ICONS = {
     "бад":        "🌿",
     "товар":      "📦",
     "идея":       "💡",
+    "claude":     "✦",
 }
 
 CATEGORY_IDS = {
@@ -36,6 +37,7 @@ CATEGORY_IDS = {
     "бад":        "бады",
     "товар":      "товары",
     "идея":       "идеи",
+    "claude":     "claude",
 }
 
 def log(msg):
