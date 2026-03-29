@@ -1,19 +1,4 @@
-export const entries = [
-  {
-    "name": "Test",
-    "category": "программы",
-    "icon": "💻",
-    "link": "test.com",
-    "tags": [
-      "#тест",
-      "#проверка"
-    ],
-    "desc": "Тестовая запись для проверки watcher.",
-    "extra": "Бесплатно: Полностью бесплатно · Платно: Отсутствует",
-    "note": "Альтернативы: нет",
-    "id": 1
-  }
-];
+export const entries = [];
 
 export const CATEGORIES = [
   { id: 'claude',      label: 'Claude',     icon: null, special: true },
@@ -23,6 +8,11 @@ export const CATEGORIES = [
   { id: 'программы',   label: 'Программы',  icon: '💻' },
   { id: 'товары',      label: 'Товары',     icon: '📦' },
 ];
+
+export function getActiveCategories() {
+  const usedCats = new Set(entries.map(e => e.category));
+  return CATEGORIES.filter(c => c.special || usedCats.has(c.id));
+}
 
 export function getEntriesForCategory(catId) {
   if (catId === 'claude') {

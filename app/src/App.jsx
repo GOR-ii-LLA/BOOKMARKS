@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import EntryRow from './components/EntryRow';
 import ClaudeIcon from './components/ClaudeIcon';
-import { CATEGORIES, getAllTags, getEntriesForCategory, getEntriesForTag } from './data/entries';
+import { CATEGORIES, getAllTags, getActiveCategories, getEntriesForCategory, getEntriesForTag } from './data/entries';
 import './App.css';
 
 export default function App() {
@@ -62,7 +62,7 @@ export default function App() {
 
         {/* Category tabs */}
         <div className="cat-tabs">
-          {CATEGORIES.map(cat => (
+          {getActiveCategories().map(cat => (
             <button
               key={cat.id}
               className={`cat-tab ${cat.special ? 'cat-tab--special' : ''} ${activeCat === cat.id && !activeTag ? 'active' : ''}`}
