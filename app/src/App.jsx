@@ -68,7 +68,7 @@ export default function App() {
               className={`cat-tab ${cat.special ? 'cat-tab--special' : ''} ${activeCat === cat.id && !activeTag ? 'active' : ''}`}
               onClick={() => handleCatClick(cat.id)}
             >
-              {cat.special ? <ClaudeIcon size={13} /> : cat.icon ? `${cat.icon} ` : ''}{cat.label}
+              {cat.special ? <ClaudeIcon size={13} color={activeCat === cat.id && !activeTag ? '#fff' : '#D97757'} /> : cat.icon ? `${cat.icon} ` : ''}{cat.label}
             </button>
           ))}
         </div>
