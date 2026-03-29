@@ -34,7 +34,7 @@ export function getActiveCategories() {
 
 export function getEntriesForCategory(catId) {
   if (catId === 'claude') {
-    return entries.filter(e => e.tags.includes('#claude')).sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+    return entries.filter(e => e.category === 'claude').sort((a, b) => a.name.localeCompare(b.name, 'ru'));
   }
   return entries.filter(e => e.category === catId).sort((a, b) => a.name.localeCompare(b.name, 'ru'));
 }
