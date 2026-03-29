@@ -1,7 +1,14 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+
+function sortTags(tags) {
+  const ru = tags.filter(t => /^#[а-яё]/i.test(t)).sort((a, b) => a.localeCompare(b, 'ru'));
+  const en = tags.filter(t => !/^#[а-яё]/i.test(t)).sort();
+  return [...ru, ...en];
+}
 
 export default function EntryRow({ entry, onTagClick }) {
   const [open, setOpen] = useState(false);
+  const sorted = useMemo(() => sortTags(entry.tags), [entry.tags]);
 
   return (
     <>
@@ -13,7 +20,7 @@ export default function EntryRow({ entry, onTagClick }) {
         <div className="entry-meta">
           <span className="entry-name">{entry.name}</span>
           <span className="entry-tags">
-            {entry.tags.join(' · ')}
+            {sorted.join(' · ')}
           </span>
         </div>
         <a
@@ -32,7 +39,7 @@ export default function EntryRow({ entry, onTagClick }) {
           {entry.extra && <p className="entry-extra">{entry.extra}</p>}
           {entry.note && <p className="entry-note">{entry.note}</p>}
           <div className="entry-expand-tags">
-            {entry.tags.map(tag => (
+            {sorted.map(tag => (
               <button
                 key={tag}
                 className="tag-pill"
