@@ -60,9 +60,9 @@ a { text-decoration: none; }
 .cat-tab { font-size: 13px; font-family: var(--font-body); padding: 10px 14px; border: none; background: none; color: var(--text-muted); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.15s; flex-shrink: 0; }
 .cat-tab:hover:not(.active) { color: var(--text); }
 .cat-tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
-.cat-tab--special { color: var(--claude); }
-.cat-tab--special:hover:not(.active) { color: var(--claude); opacity: 0.8; }
-.cat-tab--special.active { color: var(--claude); border-bottom-color: var(--claude); font-weight: 500; }
+.cat-tab--special { color: var(--claude); background: var(--claude-light); padding: 6px 14px; margin: 2px 4px 2px 0; border-bottom: none; }
+.cat-tab--special:hover:not(.active) { color: var(--claude); opacity: 0.85; }
+.cat-tab--special.active { color: #fff; background: var(--claude); border-bottom: none; font-weight: 500; }
 
 .tag-bar { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 0 12px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
 
