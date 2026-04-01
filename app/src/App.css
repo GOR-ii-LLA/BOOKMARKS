@@ -87,6 +87,8 @@ a { text-decoration: none; }
 
 .entry-expand { background: var(--bg); border-bottom: 1px solid var(--border); padding: 12px 14px 14px 50px; display: flex; flex-direction: column; gap: 6px; }
 .entry-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; white-space: pre-line; }
+.entry-github { font-size: 13px; color: var(--accent); transition: opacity 0.15s; }
+.entry-github:hover { opacity: 0.75; }
 .entry-extra { font-size: 13px; color: var(--text-muted); }
 .entry-note { font-size: 13px; color: var(--text-faint); }
 .entry-expand-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
