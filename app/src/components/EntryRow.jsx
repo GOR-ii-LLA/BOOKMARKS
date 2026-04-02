@@ -36,9 +36,9 @@ export default function EntryRow({ entry, onTagClick }) {
       </div>
       {open && (
         <div className="entry-expand">
-          {entry.link && (
-            <p className="entry-field">
-              <span className="entry-field-label">Официальная страница: </span>
+          <p className="entry-field">
+            <span className="entry-field-label">Официальная страница: </span>
+            {entry.link ? (
               <a
                 className="entry-field-link"
                 href={`https://${entry.link}`}
@@ -48,11 +48,11 @@ export default function EntryRow({ entry, onTagClick }) {
               >
                 {entry.link}
               </a>
-            </p>
-          )}
-          {entry.github && (
-            <p className="entry-field">
-              <span className="entry-field-label">GitHub: </span>
+            ) : null}
+          </p>
+          <p className="entry-field">
+            <span className="entry-field-label">GitHub: </span>
+            {entry.github ? (
               <a
                 className="entry-field-link"
                 href={`https://${entry.github}`}
@@ -62,8 +62,8 @@ export default function EntryRow({ entry, onTagClick }) {
               >
                 {entry.github}
               </a>
-            </p>
-          )}
+            ) : null}
+          </p>
           <p className="entry-desc">{entry.desc}</p>
           {entry.free && <p className="entry-free">{entry.free}</p>}
           <div className="entry-expand-tags">
@@ -77,12 +77,11 @@ export default function EntryRow({ entry, onTagClick }) {
               </button>
             ))}
           </div>
-          {(entry.created || entry.updated) && (
-            <p className="entry-dates">
-              {entry.created && <>Создано: {entry.created}</>}
-              {entry.created && entry.updated && ' · '}
-              {entry.updated && <>Изменено: {entry.updated}</>}
-            </p>
+          {entry.created && (
+            <p className="entry-dates">Дата создания: {entry.created}</p>
+          )}
+          {entry.updated && (
+            <p className="entry-dates">Дата изменения: {entry.updated}</p>
           )}
         </div>
       )}
