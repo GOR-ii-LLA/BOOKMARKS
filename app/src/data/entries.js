@@ -1,11 +1,11 @@
 export const entries = [];
 
 export const CATEGORIES = [
-  { id: 'claude',      label: 'Claude',     icon: null, special: true },
-  { id: 'аптечка',     label: 'Аптечка',    icon: '💊' },
-  { id: 'программы',   label: 'Программы',  icon: '💻' },
-  { id: 'товары',      label: 'Товары',     icon: '📦' },
-  { id: 'чердак',      label: 'Чердак',     icon: '📥' },
+  { id: 'Claude',     label: 'Claude',     special: true },
+  { id: 'аптечка',    label: 'Аптечка'    },
+  { id: 'программы',  label: 'Программы'  },
+  { id: 'товары',     label: 'Товары'     },
+  { id: 'чердак',     label: 'Чердак'     },
 ];
 
 export function getActiveCategories() {
@@ -13,8 +13,8 @@ export function getActiveCategories() {
 }
 
 export function getEntriesForCategory(catId) {
-  if (catId === 'claude') {
-    return entries.filter(e => e.category === 'claude').sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+  if (catId === 'Claude') {
+    return entries.filter(e => e.category === 'Claude').sort((a, b) => a.name.localeCompare(b.name, 'ru'));
   }
   return entries.filter(e => e.category === catId).sort((a, b) => a.name.localeCompare(b.name, 'ru'));
 }

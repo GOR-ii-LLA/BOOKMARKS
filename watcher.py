@@ -10,36 +10,24 @@ import json
 import time
 import subprocess
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, date
 
 # ── Настройки ──────────────────────────────────────────────────────────────────
 SCRIPT_DIR   = Path(__file__).parent
 VAULT_DIR    = SCRIPT_DIR / "vault"
 INBOX_DIR    = VAULT_DIR / "inbox"
 ENTRIES_FILE = SCRIPT_DIR / "app" / "src" / "data" / "entries.js"
-GIT_TOKEN    = None  # токен хранится в git config
-GIT_REMOTE   = None  # токен хранится в git config, не здесь
 POLL_SECONDS = 10
 
-# ── Иконки категорий ───────────────────────────────────────────────────────────
-CATEGORY_ICONS = {
-    "программа":  "💻",
-    "лекарство":  "💊",
-    "бад":        "🌿",
-    "товар":      "📦",
-    "идея":       "💡",
-    "claude":     "✦",
-    "клод":       "✦",
-}
-
+# ── Категории ──────────────────────────────────────────────────────────────────
 CATEGORY_IDS = {
     "программа":  "программы",
     "лекарство":  "лекарства",
     "бад":        "бады",
     "товар":      "товары",
     "идея":       "идеи",
-    "claude":     "claude",
-    "клод":       "claude",
+    "claude":     "Claude",
+    "клод":       "Claude",
 }
 
 def log(msg):
@@ -61,10 +49,12 @@ def parse_md(path: Path) -> dict | None:
     desc = field("Подробнее")
     link_raw = field("Официальная страница")
     link = re.sub(r"https?://(www\.)?", "", link_raw).rstrip("/")
+    github_raw = field("GitHub")
+    github = re.sub(r"https?://(www\.)?", "", github_raw).rstrip("/")
     free = field("Бесплатная версия") or field("Бесплатно")
-    paid = field("Платная версия") or field("Платный план")
     tags_raw = field("Теги")
-    note = field("Аналоги") or field("Альтернативы")
+    created = field("Дата создания") or str(date.today())
+    updated = field("Дата изменения") or str(date.today())
 
     # Normalize category
     cat_id = None
@@ -76,8 +66,6 @@ def parse_md(path: Path) -> dict | None:
         log(f"  ⚠ Неизвестная категория '{category_raw}' в {path.name}, пропускаю")
         return None
 
-    icon = CATEGORY_ICONS.get(category_raw.split()[0], "📌")
-
     # Tags: split by comma or space, add # prefix
     tags = []
     for t in re.split(r"[,،]\s*", tags_raw):
@@ -85,23 +73,16 @@ def parse_md(path: Path) -> dict | None:
         if t:
             tags.append("#" + t.replace(" ", "-"))
 
-    # Extra info
-    extra_parts = []
-    if free:
-        extra_parts.append(f"Бесплатно: {free}")
-    if paid:
-        extra_parts.append(f"Платно: {paid}")
-    extra = " · ".join(extra_parts) if extra_parts else ""
-
     return {
-        "name":     name,
         "category": cat_id,
-        "icon":     icon,
+        "name":     name,
         "link":     link,
-        "tags":     tags,
+        "github":   github,
         "desc":     desc,
-        "extra":    extra,
-        "note":     f"Альтернативы: {note}" if note else "",
+        "free":     free,
+        "tags":     tags,
+        "created":  created,
+        "updated":  updated,
     }
 
 # ── Чтение текущего entries.js ─────────────────────────────────────────────────
@@ -117,10 +98,6 @@ def read_entries() -> list[dict]:
 
 # ── Запись entries.js ──────────────────────────────────────────────────────────
 def write_entries(entries: list[dict]):
-    # Assign IDs
-    for i, e in enumerate(entries):
-        e["id"] = i + 1
-
     entries_json = json.dumps(entries, ensure_ascii=False, indent=2)
 
     template = ENTRIES_FILE.read_text(encoding="utf-8")

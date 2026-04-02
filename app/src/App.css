@@ -78,19 +78,17 @@ a { text-decoration: none; }
 .entry-row:last-child { border-bottom: none; }
 .entry-row:hover, .entry-row.open { background: var(--bg); }
 
-.entry-icon { font-size: 16px; width: 26px; text-align: center; flex-shrink: 0; }
 .entry-meta { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .entry-name { font-size: 14px; font-weight: 500; color: var(--text); }
 .entry-tags { font-size: 11px; color: var(--text-faint); }
 .entry-link { font-size: 12px; color: var(--accent); white-space: nowrap; flex-shrink: 0; transition: opacity 0.15s; padding: 4px 0 4px 8px; }
 .entry-link:hover { opacity: 0.75; }
 
-.entry-expand { background: var(--bg); border-bottom: 1px solid var(--border); padding: 12px 14px 14px 50px; display: flex; flex-direction: column; gap: 6px; }
+.entry-expand { background: var(--bg); border-bottom: 1px solid var(--border); padding: 12px 14px 14px 14px; display: flex; flex-direction: column; gap: 6px; }
 .entry-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; white-space: pre-line; }
 .entry-github { font-size: 13px; color: var(--accent); transition: opacity 0.15s; }
 .entry-github:hover { opacity: 0.75; }
-.entry-extra { font-size: 13px; color: var(--text-muted); }
-.entry-note { font-size: 13px; color: var(--text-faint); }
+.entry-free { font-size: 13px; color: var(--text-muted); }
 .entry-expand-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
 .entry-expand-tags .tag-pill { font-size: 11px; padding: 3px 9px; background: var(--accent-light); border-color: var(--accent); color: var(--accent-text); }
 .entry-expand-tags .tag-pill:hover { opacity: 0.85; }
@@ -110,5 +108,5 @@ a { text-decoration: none; }
   .tag-pill { font-size: 12px; padding: 6px 11px; }
   .entry-row { padding: 13px 12px; }
   .entry-name { font-size: 15px; }
-  .entry-expand { padding: 12px 12px 14px 48px; }
+  .entry-expand { padding: 12px 12px 14px 12px; }
 }

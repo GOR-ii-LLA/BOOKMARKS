@@ -16,7 +16,6 @@ export default function EntryRow({ entry, onTagClick }) {
         className={`entry-row ${open ? 'open' : ''}`}
         onClick={() => setOpen(o => !o)}
       >
-        <span className="entry-icon">{entry.icon}</span>
         <div className="entry-meta">
           <span className="entry-name">{entry.name}</span>
           <span className="entry-tags">
@@ -47,8 +46,7 @@ export default function EntryRow({ entry, onTagClick }) {
               GitHub →
             </a>
           )}
-          {entry.extra && <p className="entry-extra">{entry.extra}</p>}
-          {entry.note && <p className="entry-note">{entry.note}</p>}
+          {entry.free && <p className="entry-free">{entry.free}</p>}
           <div className="entry-expand-tags">
             {sorted.map(tag => (
               <button

@@ -6,7 +6,7 @@ import './App.css';
 
 export default function App() {
   const [dark, setDark] = useState(false);
-  const [activeCat, setActiveCat] = useState('claude');
+  const [activeCat, setActiveCat] = useState('Claude');
   const [activeTag, setActiveTag] = useState(null);
   const [search, setSearch] = useState('');
 
@@ -68,7 +68,7 @@ export default function App() {
               className={`cat-tab ${cat.special ? 'cat-tab--special' : ''} ${activeCat === cat.id && !activeTag ? 'active' : ''}`}
               onClick={() => handleCatClick(cat.id)}
             >
-              {cat.special ? <ClaudeIcon size={13} color={activeCat === cat.id && !activeTag ? '#fff' : '#D97757'} /> : cat.icon ? `${cat.icon} ` : ''}{cat.label}
+              {cat.special ? <ClaudeIcon size={13} color={activeCat === cat.id && !activeTag ? '#fff' : '#D97757'} /> : ''}{cat.label}
             </button>
           ))}
         </div>
@@ -98,7 +98,7 @@ export default function App() {
           ) : (
             currentEntries.map(entry => (
               <EntryRow
-                key={entry.id}
+                key={entry.name}
                 entry={entry}
                 onTagClick={handleTagClick}
               />
