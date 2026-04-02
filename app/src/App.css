@@ -110,3 +110,10 @@ a { text-decoration: none; }
   .entry-name { font-size: 15px; }
   .entry-expand { padding: 12px 12px 14px 12px; }
 }
+
+/* Новые стили для EntryRow */
+.entry-field { font-size: 13px; color: var(--text-muted); }
+.entry-field-label { color: var(--text-faint); }
+.entry-field-link { color: var(--accent); transition: opacity 0.15s; }
+.entry-field-link:hover { opacity: 0.75; }
+.entry-dates { font-size: 11px; color: var(--text-faint); margin-top: 4px; }

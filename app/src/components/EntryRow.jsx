@@ -22,30 +22,49 @@ export default function EntryRow({ entry, onTagClick }) {
             {sorted.join(' · ')}
           </span>
         </div>
-        <a
-          className="entry-link"
-          href={`https://${entry.link}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={e => e.stopPropagation()}
-        >
-          {entry.link} →
-        </a>
+        {entry.link && (
+          <a
+            className="entry-link"
+            href={`https://${entry.link}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={e => e.stopPropagation()}
+          >
+            {entry.link} →
+          </a>
+        )}
       </div>
       {open && (
         <div className="entry-expand">
-          <p className="entry-desc">{entry.desc}</p>
-          {entry.github && (
-            <a
-              className="entry-github"
-              href={`https://${entry.github}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={e => e.stopPropagation()}
-            >
-              GitHub →
-            </a>
+          {entry.link && (
+            <p className="entry-field">
+              <span className="entry-field-label">Официальная страница: </span>
+              <a
+                className="entry-field-link"
+                href={`https://${entry.link}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+              >
+                {entry.link}
+              </a>
+            </p>
           )}
+          {entry.github && (
+            <p className="entry-field">
+              <span className="entry-field-label">GitHub: </span>
+              <a
+                className="entry-field-link"
+                href={`https://${entry.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+              >
+                {entry.github}
+              </a>
+            </p>
+          )}
+          <p className="entry-desc">{entry.desc}</p>
           {entry.free && <p className="entry-free">{entry.free}</p>}
           <div className="entry-expand-tags">
             {sorted.map(tag => (
@@ -58,6 +77,13 @@ export default function EntryRow({ entry, onTagClick }) {
               </button>
             ))}
           </div>
+          {(entry.created || entry.updated) && (
+            <p className="entry-dates">
+              {entry.created && <>Создано: {entry.created}</>}
+              {entry.created && entry.updated && ' · '}
+              {entry.updated && <>Изменено: {entry.updated}</>}
+            </p>
+          )}
         </div>
       )}
     </>
