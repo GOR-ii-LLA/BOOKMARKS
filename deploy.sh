@@ -2,7 +2,7 @@
 
 # Синхронизация SKILL.md в Cowork
 SKILL_SRC="plugin/skills/SKILL.md"
-SKILL_DST="/c/Users/Work/.claude/skills/book/SKILL.md"
+SKILL_DST="/c/Users/Work/.claude/skills/bookmarks/SKILL.md"
 
 if [ -f "$SKILL_SRC" ]; then
   cp "$SKILL_SRC" "$SKILL_DST"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BOOK Watcher — следит за vault/, парсит новые .md файлы и обновляет entries.js
+BOOKMARKS Watcher — следит за vault/, парсит новые .md файлы и обновляет entries.js
 Запуск: python watcher.py
 """
 
@@ -189,7 +189,7 @@ def process_inbox():
 
 # ── Главный цикл ───────────────────────────────────────────────────────────────
 def main():
-    log("BOOK Watcher запущен")
+    log("BOOKMARKS Watcher запущен")
     log(f"Слежу за: {INBOX_DIR}")
     log(f"Интервал: {POLL_SECONDS} сек")
     log("Ctrl+C для остановки")

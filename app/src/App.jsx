@@ -44,7 +44,7 @@ export default function App() {
         {/* Header */}
         <header className="header">
           <div className="logo">
-            B<span className="logo-o">O</span>OK
+            B<span className="logo-o">OO</span>KMARKS
           </div>
           <button className="theme-btn" onClick={() => setDark(d => !d)}>
             {dark ? '☀ светлая' : '◑ тёмная'}
