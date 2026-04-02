@@ -1,4 +1,20 @@
-export const entries = [];
+export const entries = [
+  {
+    "category": "Claude",
+    "name": "v2rayN",
+    "link": "",
+    "github": "github.com/2dust/v2rayN",
+    "desc": "v2rayN — это бесплатная программа с графическим интерфейсом для Windows, Linux и macOS, которая позволяет обходить интернет-блокировки через прокси-протоколы, работая поверх движков Xray, sing-box или mihomo.",
+    "free": "Полностью бесплатная и открытая (GPLv3) — никаких платных планов, весь функционал доступен сразу.",
+    "tags": [
+      "#free",
+      "#proxy",
+      "#vpn"
+    ],
+    "created": "2026-04-02",
+    "updated": "2026-04-02"
+  }
+];
 
 export const CATEGORIES = [
   { id: 'Claude',     label: 'Claude',     special: true },
