@@ -119,3 +119,4 @@ export default function EntryRow({ entry, onTagClick }) {
     </>
   );
 }
+
