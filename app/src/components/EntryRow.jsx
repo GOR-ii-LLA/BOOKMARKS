@@ -62,6 +62,8 @@ export default function EntryRow({ entry, onTagClick }) {
           )}
           <p className="entry-desc">{entry.desc}</p>
 
+          {entry.free && <p className="entry-free">{entry.free}</p>}
+
           {entry.youtube && entry.youtube.length > 0 && (
             <div className="entry-media-block">
               <span className="entry-media-title">Youtube:</span>
@@ -98,7 +100,6 @@ export default function EntryRow({ entry, onTagClick }) {
             </div>
           )}
 
-          {entry.free && <p className="entry-free">{entry.free}</p>}
           <div className="entry-expand-tags">
             {sorted.map(tag => (
               <button
@@ -109,6 +110,10 @@ export default function EntryRow({ entry, onTagClick }) {
                 {tag}
               </button>
             ))}
+          </div>
+          <div className="entry-dates">
+            <span>Дата создания: {entry.created}</span>
+            <span>Дата изменения: {entry.updated}</span>
           </div>
         </div>
       )}

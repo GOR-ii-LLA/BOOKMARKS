@@ -107,6 +107,10 @@ a { text-decoration: none; }
 .entry-expand-tags .tag-pill { font-size: 11px; padding: 3px 9px; background: var(--accent-light); border-color: var(--accent); color: var(--accent-text); }
 .entry-expand-tags .tag-pill:hover { opacity: 0.85; }
 
+/* Dates */
+.entry-dates { display: flex; flex-direction: column; gap: 1px; margin-top: 4px; }
+.entry-dates span { font-size: 11px; color: var(--text-faint); }
+
 /* Youtube & Resources blocks */
 .entry-media-block { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
 .entry-media-title { font-size: 12px; font-weight: 500; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 1px; }
