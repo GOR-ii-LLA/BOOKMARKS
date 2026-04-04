@@ -471,6 +471,23 @@ export const entries = [
   },
   {
     "category": "Claude",
+    "name": "Visual Studio Code",
+    "link": "code.visualstudio.com",
+    "github": "github.com/microsoft/vscode",
+    "desc": "Visual Studio Code — бесплатный редактор кода от Microsoft, в котором через официальное расширение Claude Code работает прямо в боковой панели редактора.\nПредставь: ты пишешь код, выделяешь непонятный кусок и сразу же в соседней панели спрашиваешь у Claude «что это делает?» — не переключая окон, не копируя вручную.\nКогда Claude предлагает изменения в коде, VS Code показывает их в виде наглядного сравнения «было / стало» прямо в редакторе, и ты просто принимаешь или отклоняешь каждый фрагмент.\nДля интеграции с Claude Code достаточно установить официальное расширение «Claude Code for VS Code» от Anthropic из маркетплейса — и Claude появится внутри VS Code с доступом к файлам, истории разговоров и возможностью запускать несколько бесед в разных вкладках.\nТакже Claude доступен в VS Code через GitHub Copilot (с подпиской Copilot) — как «Claude agent» без отдельной установки расширения.",
+    "youtube": [],
+    "resources": [],
+    "free": "VS Code полностью бесплатен и с открытым кодом. Расширение Claude Code — бесплатно, но требует подписки Claude Pro, Max, Team или Enterprise, либо API-ключ Anthropic.",
+    "tags": [
+      "#разработка",
+      "#free",
+      "#claude-code",
+      "#vibecode"
+    ],
+    "created": "2026-04-04"
+  },
+  {
+    "category": "Claude",
     "name": "Vite",
     "link": "vitejs.dev",
     "github": "github.com/vitejs/vite",
