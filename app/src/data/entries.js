@@ -9,6 +9,10 @@ export const entries = [
       {
         "name": "Я потратил на Claude Code 1 000 часов. Вот что нужно знать для вайб-кодинга",
         "url": "https://youtu.be/sx6ZSbc51gY?si=jfPUKf7_r9cDkdoP"
+      },
+      {
+        "name": "Claude Code + Playwright: ИИ сам тестирует твой сайт за тебя",
+        "url": "https://youtu.be/cR7MzV-OA1Y?si=pQZpAnESPFXu7wVb"
       }
     ],
     "resources": [],
@@ -18,7 +22,7 @@ export const entries = [
       "#code",
       "#vibecode"
     ],
-    "created": "2026-04-03"
+    "created": "2026-04-03\nДата изменения: 2026-04-04"
   },
   {
     "category": "Claude",
