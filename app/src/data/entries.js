@@ -210,7 +210,8 @@ export const entries = [
       "#автоматизация",
       "#видео",
       "#free",
-      "#claude-code"
+      "#claude-code",
+      "#react"
     ],
     "created": "2026-04-04"
   },
