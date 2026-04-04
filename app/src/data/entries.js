@@ -1,6 +1,21 @@
 export const entries = [
   {
     "category": "Claude",
+    "name": "Bun",
+    "link": "bun.com",
+    "github": "github.com/oven-sh/bun",
+    "desc": "Bun — это замена Node.js «всё в одном»: среда выполнения JavaScript, менеджер пакетов, сборщик и тест-раннер в одном бинарном файле, написанном на Zig.\nVместо того чтобы ставить отдельно npm, TypeScript-компилятор, Jest и Webpack — ты просто пишешь `bun install`, `bun test`, `bun run dev` — и этого достаточно для полноценной разработки.\nBun работает в 2–3 раза быстрее Node.js по HTTP-запросам, запускается за 5 мс против 50–120 мс у Node, а пакеты устанавливает в 6–35 раз быстрее: то, что npm ставит 18 секунд, Bun делает за 2.\nВ декабре 2025 года Bun был приобретён Anthropic и теперь лежит в основе Claude Code — это означает, что при использовании Claude Code ты напрямую взаимодействуешь с Bun как с движком выполнения.\nBun поддерживает TypeScript и JSX нативно без дополнительных инструментов, что делает его идеальной средой для запуска скриптов и автоматизации, написанных вместе с Claude.",
+    "youtube": [],
+    "resources": [],
+    "free": "Полностью бесплатный и открытый, MIT-лицензия.",
+    "tags": [
+      "#claude-code",
+      "#free"
+    ],
+    "created": "2026-04-04"
+  },
+  {
+    "category": "Claude",
     "name": "Claude Code",
     "link": "code.claude.com/docs/en/overview",
     "github": "github.com/anthropics/claude-code",
