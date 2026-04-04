@@ -684,25 +684,6 @@ export const entries = [
   },
   {
     "category": "Claude",
-    "name": "Postgres MCP Pro",
-    "link": "crystaldba.ai",
-    "github": "github.com/crystaldba/postgres-mcp",
-    "desc": "Postgres MCP Pro — это MCP-сервер для работы с базами данных PostgreSQL: ты подключаешь его к Claude Desktop или Cursor, и Claude начинает «видеть» твою базу — её таблицы, запросы, индексы — и может с ней работать напрямую.\nВместо того чтобы вручную писать SQL и гадать, почему сайт тормозит, ты просто пишешь Клоду «моё приложение медленное, разберись» — и он сам найдёт тяжёлые запросы, предложит нужные индексы и покажет, насколько станет быстрее ещё до их создания.\nОсобенность Postgres MCP Pro в том, что он не просто «запускает SQL от имени Claude», а использует промышленные алгоритмы оптимизации: перебирает тысячи вариантов индексов, симулирует их эффект через расширение hypopg, проверяет здоровье базы — кэш, соединения, вакуум, репликацию.\nУдобный сценарий интеграции с Claude: ты пишешь новый функционал в Cursor, а Postgres MCP Pro даёт Клоду полный контекст схемы базы — и тот сразу генерирует правильный SQL под твои таблицы, без лишних вопросов и итераций.\nВажный нюанс: Crystal DBA была приобретена компанией Temporal Technologies — развитие продолжается, но направление может измениться; для работы расширенных функций нужны PostgreSQL-расширения pg_stat_statements и hypopg, а экспериментальный режим оптимизации через LLM требует ключ OpenAI API.",
-    "youtube": [],
-    "resources": [],
-    "free": "Полностью бесплатно, open source, лицензия MIT.",
-    "tags": [
-      "#оптимизация",
-      "#разработка",
-      "#mcp",
-      "#postgresql",
-      "#sql",
-      "#free"
-    ],
-    "created": "2026-04-05"
-  },
-  {
-    "category": "Claude",
     "name": "PostgreSQL MCP Server",
     "link": "github.com/modelcontextprotocol/servers-archived/tree/HEAD/src/postgres",
     "github": "github.com/modelcontextprotocol/servers-archived",
