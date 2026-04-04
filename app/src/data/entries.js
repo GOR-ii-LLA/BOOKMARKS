@@ -269,8 +269,7 @@ export const entries = [
     "free": "Notion MCP бесплатен для любого плана Notion; подключение к Claude доступно на бесплатном плане Claude через Connectors Directory.",
     "tags": [
       "#mcp",
-      "#интеграция",
-      "#продуктивность",
+      "#разработка",
       "#free"
     ],
     "created": "2026-04-04"
