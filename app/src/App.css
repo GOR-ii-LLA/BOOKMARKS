@@ -125,6 +125,41 @@ a { text-decoration: none; }
 .cat-tab--special:hover:not(.active) { color: var(--claude); opacity: 0.85; }
 .cat-tab--special.active { color: #fff; background: var(--claude); border-bottom: none; font-weight: 500; }
 
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--text-muted);
+}
+
+.cat-tab--special .count-badge {
+  background: rgba(255,255,255,0.25);
+  color: var(--claude);
+}
+
+.cat-tab--special.active .count-badge {
+  background: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.logo .count-badge {
+  font-size: 12px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--accent-light);
+  color: var(--accent-text);
+}
+
 .tag-bar {
   display: flex;
   flex-wrap: wrap;

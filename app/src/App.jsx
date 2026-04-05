@@ -133,7 +133,7 @@ function App() {
     <div className={`app ${dark ? 'dark' : ''}`}>
       <div className="container">
         <header className="header">
-          <div className="logo">B<span className="logo-o">OO</span>KMARKS</div>
+          <div className="logo">B<span className="logo-o">OO</span>KMARKS<span className="count-badge">{getAllEntries().length}</span></div>
           <button className="theme-btn" onClick={() => setDark(v => !v)}>
             {dark ? '☀ светлая' : '◑ тёмная'}
           </button>
@@ -149,7 +149,7 @@ function App() {
                 className={`cat-tab ${c.special ? 'cat-tab--special' : ''} ${cat === c.id && !activeTag ? 'active' : ''}`}
                 onClick={() => selectCat(c.id)}>
                 {c.special ? <SparkleIcon size={13} color={cat === c.id && !activeTag ? '#fff' : '#D97757'} /> : ''}
-                {c.label}
+                {c.label}<span className="count-badge">{getEntriesForCategory(c.id).length}</span>
               </button>
             ))}
           </div>
@@ -158,7 +158,7 @@ function App() {
               <button key={c.id}
                 className={`cat-tab ${cat === c.id && !activeTag ? 'active' : ''}`}
                 onClick={() => selectCat(c.id)}>
-                {c.label}
+                {c.label}<span className="count-badge">{getEntriesForCategory(c.id).length}</span>
               </button>
             ))}
             <button
