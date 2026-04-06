@@ -108,6 +108,7 @@ function App() {
   const [cat, setCat] = useState(null);
   const [activeTag, setActiveTag] = useState(null);
   const [search, setSearch] = useState('');
+  const [translateText, setTranslateText] = useState('');
 
   const allTags = useMemo(() => getAllTags(), []);
   const cats = getActiveCategories();
@@ -138,6 +139,27 @@ function App() {
             {dark ? '☀ светлая' : '◑ тёмная'}
           </button>
         </header>
+
+        <div className="translate-bar">
+          <input
+            className="translate-input"
+            type="text"
+            placeholder="Введите текст для перевода..."
+            value={translateText}
+            onChange={e => setTranslateText(e.target.value)}
+          />
+          <button
+            className="translate-btn"
+            onClick={() => {
+              const url = translateText.trim()
+                ? `https://translate.yandex.ru/?text=${encodeURIComponent(translateText)}`
+                : 'https://translate.yandex.ru/';
+              window.open(url, '_blank');
+            }}
+          >
+            Перевести в Яндексе
+          </button>
+        </div>
 
         <input className="search" type="text" placeholder="Поиск..."
                value={search} onChange={e => setSearch(e.target.value)} />

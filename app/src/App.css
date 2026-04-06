@@ -68,6 +68,51 @@ a { text-decoration: none; }
 }
 .theme-btn:hover { color: var(--text); border-color: var(--text-muted); }
 
+.translate-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.translate-input {
+  flex: 1;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: var(--font-body);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.translate-input::placeholder {
+  color: var(--text-faint);
+}
+
+.translate-input:focus {
+  border-color: var(--accent);
+}
+
+.translate-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.translate-btn:hover {
+  background: var(--accent-dark);
+}
+
 .search {
   width: 100%;
   padding: 10px 14px;
@@ -276,6 +321,8 @@ a { text-decoration: none; }
   .header { padding: 1rem 0 .875rem; }
   .logo { font-size: 16px; }
   .search { font-size: 16px; padding: 11px 13px; }
+  .translate-btn { padding: 10px 12px; font-size: 13px; }
+  .translate-input { font-size: 16px; padding: 11px 13px; }
   .cat-tab { font-size: 13px; padding: 10px 12px; }
   .tag-pill { font-size: 12px; padding: 6px 11px; }
   .entry-row { padding: 13px 12px; }
