@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { getActiveCategories, getAllEntries, getEntriesForCategory, getEntriesForTag, getAllTags } from './data/entries.js';
 import './App.css';
 
@@ -319,19 +319,23 @@ function App() {
         <div className="cat-tabs-wrap">
           <div className="cat-tabs">
             {row1.map(c => (
-              <button key={c.id}
-                className={`cat-tab ${c.special ? 'cat-tab--special' : ''} ${cat === c.id && !activeTag ? 'active' : ''}`}
-                onClick={() => selectCat(c.id)}>
-                {c.special ? <SparkleIcon size={13} color={cat === c.id && !activeTag ? '#fff' : '#D97757'} /> : ''}
-                {c.label}<span className="count-badge">{getEntriesForCategory(c.id).length}</span>
-              </button>
+              <React.Fragment key={c.id}>
+                <button
+                  className={`cat-tab ${c.special ? 'cat-tab--special' : ''} ${cat === c.id && !activeTag ? 'active' : ''}`}
+                  onClick={() => selectCat(c.id)}>
+                  {c.special ? <SparkleIcon size={13} color={cat === c.id && !activeTag ? '#fff' : '#D97757'} /> : ''}
+                  {c.label}<span className="count-badge">{getEntriesForCategory(c.id).length}</span>
+                </button>
+                {c.special && (
+                  <a className="cat-tab"
+                     href="https://chat.aillm.ru"
+                     target="_blank" rel="noopener noreferrer"
+                     style={{ textDecoration: 'none' }}>
+                    AiLLM
+                  </a>
+                )}
+              </React.Fragment>
             ))}
-            <a className="cat-tab cat-tab--special"
-               href="https://chat.aillm.ru"
-               target="_blank" rel="noopener noreferrer"
-               style={{ textDecoration: 'none' }}>
-              AiLLM
-            </a>
           </div>
           <div className="cat-tabs">
             {row2.map(c => (
