@@ -78,6 +78,97 @@ function SparkleIcon({ size = 13, color = '#D97757' }) {
   );
 }
 
+function Swatch({ color, name, value, border }) {
+  return (
+    <div className="uikit-swatch">
+      <div className="uikit-dot" style={{ background: color, border: border ? '1px solid rgba(255,255,255,0.15)' : 'none' }} />
+      <div className="uikit-dotname">{name}</div>
+      <div className="uikit-dotval">{value}</div>
+    </div>
+  );
+}
+
+function UIKitPanel() {
+  return (
+    <div className="uikit-panel">
+      <div className="uikit-title">UI Kit — BOOKMARKS</div>
+
+      <div className="uikit-group">
+        <div className="uikit-label">1. Шрифт</div>
+        <div className="uikit-row">
+          <span style={{ fontSize: 16, fontWeight: 500 }}>Inter — Regular & Medium</span>
+        </div>
+        <div className="uikit-hint" style={{ marginBottom: 8 }}>Единственный шрифт для всего приложения · wght 400, 500 · Google Fonts</div>
+        <div className="uikit-specimen">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</div>
+        <div className="uikit-specimen">АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ абвгдеёжзийклмнопрстуфхцчшщъыьэюя</div>
+        <div className="uikit-specimen">0123456789 !@#$%^&*()—–</div>
+      </div>
+
+      <div className="uikit-group">
+        <div className="uikit-label">2. Размеры текста</div>
+        <div className="uikit-row"><span style={{ fontSize: 18, fontWeight: 500 }}>Логотип — 18px</span><span className="uikit-hint">weight 500</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 17, fontWeight: 500 }}>Заголовок тега — 17px</span><span className="uikit-hint">weight 500</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 15 }}>Поиск, ввод — 15px</span><span className="uikit-hint">weight 400</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 14, fontWeight: 500 }}>Название записи — 14px</span><span className="uikit-hint">weight 500</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 14 }}>Кнопка перевода — 14px</span><span className="uikit-hint">weight 400</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 13 }}>Табы, описание, валюты — 13px</span><span className="uikit-hint">weight 400</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 12 }}>Теги, ссылки — 12px</span><span className="uikit-hint">weight 400</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 11, fontWeight: 500 }}>Бейджи, даты, мета — 11px</span><span className="uikit-hint">weight 500</span></div>
+      </div>
+
+      <div className="uikit-group">
+        <div className="uikit-label">3. Основные цвета</div>
+        <div className="uikit-colors">
+          <Swatch color="#6b6a65" name="bg" value="#6b6a65" />
+          <Swatch color="#1e1d1b" name="surface" value="#1e1d1b" />
+          <Swatch color="#f0ede8" name="text" value="#f0ede8" border />
+          <Swatch color="#9b9890" name="muted" value="#9b9890" />
+          <Swatch color="#6b6a65" name="faint" value="#6b6a65" border />
+          <Swatch color="rgba(255,255,255,0.1)" name="border" value="0.1" border />
+          <Swatch color="rgba(255,255,255,0.2)" name="border-s" value="0.2" border />
+        </div>
+      </div>
+
+      <div className="uikit-group">
+        <div className="uikit-label">4. Акцентные цвета</div>
+        <div className="uikit-colors">
+          <Swatch color="#1D9E75" name="accent" value="#1D9E75" />
+          <Swatch color="#0F6E56" name="dark" value="#0F6E56" />
+          <Swatch color="#0a3328" name="light" value="#0a3328" />
+          <Swatch color="#5DCAA5" name="text" value="#5DCAA5" />
+        </div>
+      </div>
+
+      <div className="uikit-group">
+        <div className="uikit-label">5. Claude цвета</div>
+        <div className="uikit-colors">
+          <Swatch color="#D97757" name="claude" value="#D97757" />
+          <Swatch color="#2d1a12" name="light" value="#2d1a12" />
+          <Swatch color="#F0997B" name="text" value="#F0997B" />
+        </div>
+      </div>
+
+      <div className="uikit-group">
+        <div className="uikit-label">6. YouTube цвета</div>
+        <div className="uikit-colors">
+          <Swatch color="#cc3333" name="yt" value="#cc3333" />
+          <Swatch color="#2d1515" name="light" value="#2d1515" />
+          <Swatch color="#f08080" name="text" value="#f08080" />
+        </div>
+      </div>
+
+      <div className="uikit-group">
+        <div className="uikit-label">7. Ресурсы цвета</div>
+        <div className="uikit-colors">
+          <Swatch color="#5b7fb5" name="res" value="#5b7fb5" />
+          <Swatch color="#1a2230" name="light" value="#1a2230" />
+          <Swatch color="#8ab4e8" name="text" value="#8ab4e8" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function EntryRow({ entry, onTagClick }) {
   const [open, setOpen] = useState(false);
   const sortedTags = useMemo(() => sortTags(entry.tags), [entry.tags]);
@@ -156,11 +247,11 @@ function EntryRow({ entry, onTagClick }) {
 }
 
 function App() {
-  const [dark, setDark] = useState(true);
   const [cat, setCat] = useState(null);
   const [activeTag, setActiveTag] = useState(null);
   const [search, setSearch] = useState('');
   const [translateText, setTranslateText] = useState('');
+  const [showKit, setShowKit] = useState(false);
 
   const allTags = useMemo(() => getAllTags(), []);
   const cats = getActiveCategories();
@@ -188,14 +279,16 @@ function App() {
   );
 
   return (
-    <div className={`app ${dark ? 'dark' : ''}`}>
+    <div className="app">
       <div className="container">
         <header className="header">
           <div className="logo">B<span className="logo-o">OO</span>KMARKS<span className="count-badge">{getAllEntries().length}</span></div>
-          <button className="theme-btn" onClick={() => setDark(v => !v)}>
-            {dark ? '☀ светлая' : '◑ тёмная'}
+          <button className="uikit-btn" onClick={() => setShowKit(v => !v)}>
+            UI Kit
           </button>
         </header>
+
+        {showKit && <UIKitPanel />}
 
         <CurrencyBar />
 
@@ -220,7 +313,6 @@ function App() {
           </button>
         </div>
 
-        {/* Поиск на мобильном — перед табами */}
         <div className="search-mobile">
           {searchInput}
         </div>
@@ -259,7 +351,6 @@ function App() {
           ))}
         </div>
 
-        {/* Поиск на десктопе — после тегов */}
         <div className="search-desktop">
           {searchInput}
         </div>
