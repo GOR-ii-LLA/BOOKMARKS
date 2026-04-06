@@ -1,5 +1,19 @@
 export const entries = [
   {
+    "category": "AI",
+    "name": "AiLLM",
+    "link": "chat.aillm.ru",
+    "github": "",
+    "desc": "",
+    "youtube": [],
+    "resources": [],
+    "free": "",
+    "tags": [
+      "#ai"
+    ],
+    "created": "2026-04-06"
+  },
+  {
     "category": "Vibecode",
     "name": "Angular",
     "link": "angular.dev",
