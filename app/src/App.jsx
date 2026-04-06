@@ -282,9 +282,17 @@ function App() {
       <div className="container">
         <header className="header">
           <div className="logo">B<span className="logo-o">OO</span>KMARKS<span className="count-badge">{getAllEntries().length}</span></div>
-          <button className="uikit-btn" onClick={() => setShowKit(v => !v)}>
-            UI Kit
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <a className="cat-tab cat-tab--special"
+               href="https://chat.aillm.ru"
+               target="_blank" rel="noopener noreferrer"
+               style={{ fontSize: 12, padding: '6px 12px', textDecoration: 'none' }}>
+              AiLLM
+            </a>
+            <button className="uikit-btn" onClick={() => setShowKit(v => !v)}>
+              UI Kit
+            </button>
+          </div>
         </header>
 
         {showKit && <UIKitPanel />}
