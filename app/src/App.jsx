@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { getActiveCategories, getAllEntries, getEntriesForCategory, getEntriesForTag, getAllTags } from './data/entries.js';
 import './App.css';
 
@@ -6,6 +6,45 @@ function sortTags(tags) {
   const cyr = tags.filter(t => /^#[а-яё]/i.test(t)).sort((a, b) => a.localeCompare(b, 'ru'));
   const lat = tags.filter(t => !/^#[а-яё]/i.test(t)).sort();
   return [...cyr, ...lat];
+}
+
+function CurrencyBar() {
+  const [rates, setRates] = useState({ usd: null, eur: null, cny: null });
+
+  useEffect(() => {
+    fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+      .then(r => r.json())
+      .then(data => {
+        setRates({
+          usd: data.Valute.USD.Value,
+          eur: data.Valute.EUR.Value,
+          cny: data.Valute.CNY.Value,
+        });
+      })
+      .catch(() => {});
+  }, []);
+
+  const fmt2 = v => v != null ? v.toFixed(2).replace('.', ',') : '—';
+  const fmt4 = v => v != null ? v.toFixed(4).replace('.', ',') : '—';
+  const cross = rates.eur && rates.usd ? rates.eur / rates.usd : null;
+
+  const today = new Date().toLocaleDateString('ru-RU', {
+    day: '2-digit', month: '2-digit', year: 'numeric'
+  });
+
+  return (
+    <div className="currency-bar">
+      <span className="currency-date">{today}</span>
+      <span className="currency-sep">|</span>
+      <span className="currency-item">🇺🇸 USD <span className="currency-value">{fmt2(rates.usd)}</span></span>
+      <span className="currency-sep">|</span>
+      <span className="currency-item">🇪🇺 EUR <span className="currency-value">{fmt2(rates.eur)}</span></span>
+      <span className="currency-sep">|</span>
+      <span className="currency-item">🇨🇳 CNY <span className="currency-value">{fmt2(rates.cny)}</span></span>
+      <span className="currency-sep">|</span>
+      <span className="currency-item">🇪🇺/🇺🇸 <span className="currency-value">{fmt4(cross)}</span></span>
+    </div>
+  );
 }
 
 function SparkleIcon({ size = 13, color = '#D97757' }) {
@@ -144,6 +183,8 @@ function App() {
             {dark ? '☀ светлая' : '◑ тёмная'}
           </button>
         </header>
+
+        <CurrencyBar />
 
         <div className="translate-bar">
           <input

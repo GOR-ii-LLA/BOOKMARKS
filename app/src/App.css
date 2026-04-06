@@ -68,6 +68,22 @@ a { text-decoration: none; }
 }
 .theme-btn:hover { color: var(--text); border-color: var(--text-muted); }
 
+.currency-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+}
+
+.currency-date { color: var(--text-faint); }
+.currency-sep { color: var(--border-strong); margin: 0 2px; }
+.currency-value { font-weight: 500; color: var(--text); }
+
 .translate-bar {
   display: flex;
   gap: 8px;
@@ -335,4 +351,5 @@ a { text-decoration: none; }
   .entry-row { padding: 13px 12px; }
   .entry-name { font-size: 15px; }
   .entry-expand { padding: 12px 12px 14px; }
+  .currency-bar { font-size: 12px; gap: 10px; }
 }
