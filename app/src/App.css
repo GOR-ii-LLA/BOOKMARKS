@@ -129,7 +129,6 @@ a { text-decoration: none; }
   background: var(--accent-dark);
 }
 
-/* Десктоп: поиск под тегами, мобильный поиск скрыт */
 .search-mobile { display: none; }
 .search-desktop { display: block; }
 
@@ -343,7 +342,6 @@ a { text-decoration: none; }
   .search { font-size: 16px; padding: 11px 13px; }
   .translate-btn { padding: 10px 12px; font-size: 13px; }
   .translate-input { font-size: 16px; padding: 11px 13px; }
-  /* Мобильный: поиск перед табами, десктопный скрыт */
   .search-mobile { display: block; }
   .search-desktop { display: none; }
   .cat-tab { font-size: 13px; padding: 10px 12px; }
@@ -353,7 +351,3 @@ a { text-decoration: none; }
   .entry-expand { padding: 12px 12px 14px; }
   .currency-bar { font-size: 12px; gap: 10px; }
 }
-/ *  
- v 6  
- * /  
- 
