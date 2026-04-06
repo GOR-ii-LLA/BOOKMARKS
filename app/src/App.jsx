@@ -8,6 +8,19 @@ function sortTags(tags) {
   return [...cyr, ...lat];
 }
 
+function CurrencyFlag({ code, size = 16 }) {
+  return (
+    <img
+      src={`https://flagcdn.com/24x18/${code}.png`}
+      srcSet={`https://flagcdn.com/48x36/${code}.png 2x`}
+      width={size}
+      height={Math.round(size * 0.75)}
+      alt=""
+      style={{ verticalAlign: 'middle', marginRight: 4, borderRadius: 2 }}
+    />
+  );
+}
+
 function CurrencyBar() {
   const [rates, setRates] = useState({ usd: null, eur: null, cny: null });
 
@@ -36,13 +49,13 @@ function CurrencyBar() {
     <div className="currency-bar">
       <span className="currency-date">{today}</span>
       <span className="currency-sep">|</span>
-      <span className="currency-item">🇺🇸 USD <span className="currency-value">{fmt2(rates.usd)}</span></span>
+      <span className="currency-item"><CurrencyFlag code="us" />USD <span className="currency-value">{fmt2(rates.usd)}</span></span>
       <span className="currency-sep">|</span>
-      <span className="currency-item">🇪🇺 EUR <span className="currency-value">{fmt2(rates.eur)}</span></span>
+      <span className="currency-item"><CurrencyFlag code="eu" />EUR <span className="currency-value">{fmt2(rates.eur)}</span></span>
       <span className="currency-sep">|</span>
-      <span className="currency-item">🇨🇳 CNY <span className="currency-value">{fmt2(rates.cny)}</span></span>
+      <span className="currency-item"><CurrencyFlag code="cn" />CNY <span className="currency-value">{fmt2(rates.cny)}</span></span>
       <span className="currency-sep">|</span>
-      <span className="currency-item">🇪🇺/🇺🇸 <span className="currency-value">{fmt4(cross)}</span></span>
+      <span className="currency-item"><CurrencyFlag code="eu" /><span style={{margin: '0 1px'}}>/</span><CurrencyFlag code="us" /><span className="currency-value">{fmt4(cross)}</span></span>
     </div>
   );
 }
