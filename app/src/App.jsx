@@ -130,6 +130,11 @@ function App() {
   function selectCat(id) { setCat(id); setActiveTag(null); setSearch(''); }
   function selectTag(tag) { setActiveTag(tag); setCat(null); setSearch(''); }
 
+  const searchInput = (
+    <input className="search" type="text" placeholder="Поиск..."
+           value={search} onChange={e => setSearch(e.target.value)} />
+  );
+
   return (
     <div className={`app ${dark ? 'dark' : ''}`}>
       <div className="container">
@@ -161,8 +166,10 @@ function App() {
           </button>
         </div>
 
-        <input className="search" type="text" placeholder="Поиск..."
-               value={search} onChange={e => setSearch(e.target.value)} />
+        {/* Поиск на мобильном — перед табами */}
+        <div className="search-mobile">
+          {searchInput}
+        </div>
 
         <div className="cat-tabs-wrap">
           <div className="cat-tabs">
@@ -196,6 +203,11 @@ function App() {
             <button key={t} className={`tag-pill ${activeTag === t ? 'active' : ''}`}
                     onClick={() => selectTag(t)}>{t}</button>
           ))}
+        </div>
+
+        {/* Поиск на десктопе — после тегов */}
+        <div className="search-desktop">
+          {searchInput}
         </div>
 
         {activeTag && <div className="tag-page-title">{activeTag}</div>}

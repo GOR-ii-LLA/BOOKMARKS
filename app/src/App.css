@@ -51,7 +51,7 @@ button { cursor: pointer; font-family: var(--font-body); }
 a { text-decoration: none; }
 
 .app { min-height: 100vh; padding: 0 0 4rem; }
-.container { max-width: 740px; margin: 0 auto; padding: 0 1rem; }
+.container { max-width: 1110px; margin: 0 auto; padding: 0 1rem; }
 
 .header { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0 1rem; }
 .logo { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--text); letter-spacing: -0.5px; }
@@ -112,6 +112,10 @@ a { text-decoration: none; }
 .translate-btn:hover {
   background: var(--accent-dark);
 }
+
+/* Десктоп: поиск под тегами, мобильный поиск скрыт */
+.search-mobile { display: none; }
+.search-desktop { display: block; }
 
 .search {
   width: 100%;
@@ -317,12 +321,15 @@ a { text-decoration: none; }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
 
 @media (max-width: 480px) {
-  .container { padding: 0 .75rem; }
+  .container { max-width: 740px; padding: 0 .75rem; }
   .header { padding: 1rem 0 .875rem; }
   .logo { font-size: 16px; }
   .search { font-size: 16px; padding: 11px 13px; }
   .translate-btn { padding: 10px 12px; font-size: 13px; }
   .translate-input { font-size: 16px; padding: 11px 13px; }
+  /* Мобильный: поиск перед табами, десктопный скрыт */
+  .search-mobile { display: block; }
+  .search-desktop { display: none; }
   .cat-tab { font-size: 13px; padding: 10px 12px; }
   .tag-pill { font-size: 12px; padding: 6px 11px; }
   .entry-row { padding: 13px 12px; }
