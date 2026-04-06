@@ -156,7 +156,7 @@ function EntryRow({ entry, onTagClick }) {
 }
 
 function App() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [cat, setCat] = useState(null);
   const [activeTag, setActiveTag] = useState(null);
   const [search, setSearch] = useState('');
