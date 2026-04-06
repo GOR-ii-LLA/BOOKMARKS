@@ -28,7 +28,7 @@
 }
 
 .dark {
-  --bg: #141412;
+  --bg: #6b6a65;
   --surface: #1e1d1b;
   --border: rgba(255,255,255,0.1);
   --border-strong: rgba(255,255,255,0.2);
@@ -168,17 +168,17 @@ a { text-decoration: none; }
   font-size: 13px;
   font-family: var(--font-body);
   padding: 10px 14px;
-  border: 1px solid var(--border-strong);
-  border-radius: 0;
-  background: var(--bg);
-  color: var(--text-muted);
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: var(--radius);
+  background: #f7f6f3;
+  color: #6b6a65;
   margin: 2px 4px 2px 0;
   white-space: nowrap;
   transition: color 0.15s, border-color 0.15s;
   flex-shrink: 0;
 }
-.cat-tab:hover:not(.active) { color: var(--text); }
-.cat-tab.active { color: var(--accent); border-color: var(--accent); font-weight: 500; }
+.cat-tab:hover:not(.active) { color: #1a1a18; }
+.cat-tab.active { color: #1D9E75; border-color: #1D9E75; font-weight: 500; }
 
 .cat-tab--special {
   color: var(--claude);
