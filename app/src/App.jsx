@@ -81,7 +81,7 @@ function SparkleIcon({ size = 13, color = '#D97757' }) {
 function Swatch({ color, name, value, border }) {
   return (
     <div className="uikit-swatch">
-      <div className="uikit-dot" style={{ background: color, border: border ? '1px solid rgba(255,255,255,0.15)' : 'none' }} />
+      <div className="uikit-dot" style={{ background: color, border: border ? '1px solid var(--border)' : 'none' }} />
       <div className="uikit-dotname">{name}</div>
       <div className="uikit-dotval">{value}</div>
     </div>
@@ -98,7 +98,7 @@ function UIKitPanel() {
         <div className="uikit-row">
           <span style={{ fontSize: 16, fontWeight: 500 }}>Inter — Regular & Medium</span>
         </div>
-        <div className="uikit-hint" style={{ marginBottom: 8 }}>Единственный шрифт для всего приложения · wght 400, 500 · Google Fonts</div>
+        <div className="uikit-hint" style={{ marginBottom: 8 }}>Единственный шрифт · wght 400, 500 · Google Fonts</div>
         <div className="uikit-specimen">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</div>
         <div className="uikit-specimen">АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ абвгдеёжзийклмнопрстуфхцчшщъыьэюя</div>
         <div className="uikit-specimen">0123456789 !@#$%^&*()—–</div>
@@ -106,7 +106,7 @@ function UIKitPanel() {
 
       <div className="uikit-group">
         <div className="uikit-label">2. Размеры текста</div>
-        <div className="uikit-row"><span style={{ fontSize: 18, fontWeight: 500 }}>Логотип — 18px</span><span className="uikit-hint">weight 500</span></div>
+        <div className="uikit-row"><span style={{ fontSize: 20, fontWeight: 500 }}>Логотип — 20px</span><span className="uikit-hint">weight 500</span></div>
         <div className="uikit-row"><span style={{ fontSize: 17, fontWeight: 500 }}>Заголовок тега — 17px</span><span className="uikit-hint">weight 500</span></div>
         <div className="uikit-row"><span style={{ fontSize: 15 }}>Поиск, ввод — 15px</span><span className="uikit-hint">weight 400</span></div>
         <div className="uikit-row"><span style={{ fontSize: 14, fontWeight: 500 }}>Название записи — 14px</span><span className="uikit-hint">weight 500</span></div>
@@ -119,13 +119,12 @@ function UIKitPanel() {
       <div className="uikit-group">
         <div className="uikit-label">3. Основные цвета</div>
         <div className="uikit-colors">
-          <Swatch color="#6b6a65" name="bg" value="#6b6a65" />
-          <Swatch color="#1e1d1b" name="surface" value="#1e1d1b" />
-          <Swatch color="#f0ede8" name="text" value="#f0ede8" border />
-          <Swatch color="#9b9890" name="muted" value="#9b9890" />
-          <Swatch color="#6b6a65" name="faint" value="#6b6a65" border />
-          <Swatch color="rgba(255,255,255,0.1)" name="border" value="0.1" border />
-          <Swatch color="rgba(255,255,255,0.2)" name="border-s" value="0.2" border />
+          <Swatch color="#8a7762" name="bg" value="#8a7762" />
+          <Swatch color="#f0ede8" name="surface" value="#f0ede8" border />
+          <Swatch color="#3a2e22" name="text" value="#3a2e22" />
+          <Swatch color="#8a7762" name="muted" value="#8a7762" />
+          <Swatch color="#a09580" name="faint" value="#a09580" />
+          <Swatch color="#f7f2eb" name="on-bg" value="#f7f2eb" border />
         </div>
       </div>
 
@@ -134,8 +133,8 @@ function UIKitPanel() {
         <div className="uikit-colors">
           <Swatch color="#1D9E75" name="accent" value="#1D9E75" />
           <Swatch color="#0F6E56" name="dark" value="#0F6E56" />
-          <Swatch color="#0a3328" name="light" value="#0a3328" />
-          <Swatch color="#5DCAA5" name="text" value="#5DCAA5" />
+          <Swatch color="#E1F5EE" name="light" value="#E1F5EE" border />
+          <Swatch color="#0F6E56" name="text" value="#0F6E56" />
         </div>
       </div>
 
@@ -143,8 +142,8 @@ function UIKitPanel() {
         <div className="uikit-label">5. Claude цвета</div>
         <div className="uikit-colors">
           <Swatch color="#D97757" name="claude" value="#D97757" />
-          <Swatch color="#2d1a12" name="light" value="#2d1a12" />
-          <Swatch color="#F0997B" name="text" value="#F0997B" />
+          <Swatch color="#FAECE7" name="light" value="#FAECE7" border />
+          <Swatch color="#993C1D" name="text" value="#993C1D" />
         </div>
       </div>
 
@@ -152,8 +151,8 @@ function UIKitPanel() {
         <div className="uikit-label">6. YouTube цвета</div>
         <div className="uikit-colors">
           <Swatch color="#cc3333" name="yt" value="#cc3333" />
-          <Swatch color="#2d1515" name="light" value="#2d1515" />
-          <Swatch color="#f08080" name="text" value="#f08080" />
+          <Swatch color="#fdeaea" name="light" value="#fdeaea" border />
+          <Swatch color="#a22" name="text" value="#aa2222" />
         </div>
       </div>
 
@@ -161,8 +160,8 @@ function UIKitPanel() {
         <div className="uikit-label">7. Ресурсы цвета</div>
         <div className="uikit-colors">
           <Swatch color="#5b7fb5" name="res" value="#5b7fb5" />
-          <Swatch color="#1a2230" name="light" value="#1a2230" />
-          <Swatch color="#8ab4e8" name="text" value="#8ab4e8" />
+          <Swatch color="#eaf0f8" name="light" value="#eaf0f8" border />
+          <Swatch color="#3a5a8a" name="text" value="#3a5a8a" />
         </div>
       </div>
     </div>
