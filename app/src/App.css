@@ -231,6 +231,12 @@ a { text-decoration: none; }
 .cat-tab--special:hover:not(.active) { color: var(--claude-text); opacity: 0.85; }
 .cat-tab--special.active { color: #fff; background: var(--claude); border-bottom: none; font-weight: 500; }
 
+.cat-tab--link {
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.cat-tab--link:hover { color: var(--text); }
+
 .count-badge {
   display: inline-flex;
   align-items: center;

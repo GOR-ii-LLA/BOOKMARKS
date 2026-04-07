@@ -327,12 +327,28 @@ function App() {
                   {c.label}<span className="count-badge">{getEntriesForCategory(c.id).length}</span>
                 </button>
                 {c.special && (
-                  <a className="cat-tab"
-                     href="https://chat.aillm.ru"
-                     target="_blank" rel="noopener noreferrer"
-                     style={{ textDecoration: 'none' }}>
-                    AiLLM
-                  </a>
+                  <>
+                    <a className="cat-tab cat-tab--link"
+                       href="https://chat.aillm.ru"
+                       target="_blank" rel="noopener noreferrer">
+                      AiLLM
+                    </a>
+                    <a className="cat-tab cat-tab--link"
+                       href="https://notebooklm.google.com/"
+                       target="_blank" rel="noopener noreferrer">
+                      NotebookLM
+                    </a>
+                    <a className="cat-tab cat-tab--link"
+                       href="https://www.perplexity.ai/"
+                       target="_blank" rel="noopener noreferrer">
+                      Perplexity
+                    </a>
+                    <a className="cat-tab cat-tab--link"
+                       href="https://chat.qwen.ai/"
+                       target="_blank" rel="noopener noreferrer">
+                      Qwen
+                    </a>
+                  </>
                 )}
               </React.Fragment>
             ))}
