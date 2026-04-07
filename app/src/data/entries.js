@@ -155,6 +155,23 @@ export const entries = [
     "created": "2026-04-04"
   },
   {
+    "category": "Vibecode",
+    "name": "claude-code-notebooklm-skills",
+    "link": "navaigate.dev",
+    "github": "github.com/skyremote/claude-code-notebooklm-skills",
+    "desc": "Это набор из двух скиллов для Claude Code от консультанта NavAIgate — они дают вайбкодеру долговременную память и возможность генерировать контент через Google NotebookLM прямо из терминала, без переключения между вкладками.\nПервый скилл (NotebookLM Integration) позволяет создавать ноутбуки, добавлять туда YouTube-видео, PDF и URL, запускать глубокий ресёрч по 40–70 источникам, а потом скачивать готовые подкасты, инфографики, квизы и слайды — всё командами в Claude.\nВторой скилл (Session Brain) срабатывает в конце сессии: Claude сам разбирает весь разговор, сохраняет ключевые решения и пушит структурированное резюме в специальный ноутбук «AI Brain» — так со временем в NotebookLM накапливается семантическая база всей твоей истории с Claude.\nИнтеграция с Claude Code буквальная: копируешь .md файл скилла в Claude Code, пишешь «Execute this skill» — и Claude сам проходит аутентификацию через Google и начинает работать с NotebookLM как с инструментом.\nГлавный недостаток — зависимость от неофициального API NotebookLM (через библиотеку notebooklm-py): Google не поддерживает публичный API, поэтому скилл может ломаться после обновлений на стороне Google, а работает только в локальном Claude Code, не в веб-интерфейсе.",
+    "youtube": [],
+    "resources": [],
+    "free": "Полностью бесплатный и открытый проект. NotebookLM от Google тоже бесплатен — нужен только аккаунт Google и локальная установка Claude Code.",
+    "tags": [
+      "#vibecode",
+      "#notebooklm",
+      "#claude-code",
+      "#free"
+    ],
+    "created": "2026-04-08"
+  },
+  {
     "category": "Claude",
     "name": "claude-orchestration",
     "link": "",
