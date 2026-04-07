@@ -687,6 +687,7 @@ export const entries = [
       "#vibecode",
       "#notebooklm",
       "#разработка",
+      "#claude-code",
       "#free"
     ],
     "created": "2026-04-08"
